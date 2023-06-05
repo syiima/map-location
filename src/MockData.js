@@ -3,8 +3,8 @@ export const MockData = [
     {
         id: 1,
         value: 'Petronas Twin Tower Kuala Lumpur',
-        lat: 3.1594,
-        lng: 101.7142,
+        lat: 3.1577,
+        lng: 101.7118,
     },
     {
         id: 2,

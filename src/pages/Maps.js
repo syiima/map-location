@@ -11,7 +11,7 @@ export const Maps = () => {
           lat: 3.1517,
           lng: 101.7020
         },
-        zoom: 13
+        zoom: 16
     };
     
     const [center, setCenter] = useState(defaultProps.center)
@@ -27,20 +27,27 @@ export const Maps = () => {
         // console.log('ddd', MockData[ind]);
     };
 
+    const handleClear = () => {
+
+    }
 
     return(
         <div style={{ height: '100vh', width: '100%' }}>
             <AutoComplete
                 style={{
-                    width: 200,
+                    width: 400,
+                    border: '1px solid black',
+                    borderRadius:8,
                     position:'absolute',
                     zIndex:1,
-                    top: '20px'
+                    top: '50px',
+                    transform: 'translate(-50%, -50%)'
+                    // margin-right: auto;
                 }}
                 options={MockData}
                 placeholder="Type in the location name"
                 onSelect={handleSelect}
-                
+                onClear={handleClear}
                 filterOption={(inputValue, option) =>  
                 // console.log('oiii', inputValue, option.name);
                     option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1

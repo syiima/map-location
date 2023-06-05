@@ -12,10 +12,10 @@ function App() {
     <div className="App">
 
       <Row>
-        <Col span={12}>
+        <Col span={6}>
           <History />
         </Col>
-        <Col span={12}>
+        <Col span={18}>
           <Maps/>
         </Col>
       </Row>

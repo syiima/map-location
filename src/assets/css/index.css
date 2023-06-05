@@ -13,8 +13,8 @@ code {
 }
 
 .marker {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background-color: rgb(255, 81, 0);
   border-radius: 100%;
   z-index: 1;

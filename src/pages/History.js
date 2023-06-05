@@ -8,7 +8,7 @@ export const History = () => {
 
     return(
         <div>
-            Search History
+            <h3>Search History</h3>
         </div>
     )
 }
