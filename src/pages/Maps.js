@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { add } from '../hooks/useHistory';
 
 import '../assets/css/index.css';
+import location from  '../assets/images/location.png'
 import { MockData } from '../MockData';
 
 export const Maps = () => {
@@ -19,7 +20,7 @@ export const Maps = () => {
     const [center, setCenter] = useState(defaultProps.center)
     const dispatch = useDispatch();
     
-    const MarkerComponent = () => <div className='marker'/>;
+    const MarkerComponent = () => <img src={location} className='marker'  />;
 
     const handleSelect = (data) => {
         let ind = MockData.findIndex((x) => x.value === data)
