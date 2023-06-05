@@ -1,6 +1,8 @@
 import React, { useState , useEffect} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { AutoComplete } from 'antd';
+import { useDispatch } from 'react-redux';
+import { add } from '../hooks/useHistory';
 
 import '../assets/css/index.css';
 import { MockData } from '../MockData';
@@ -15,21 +17,20 @@ export const Maps = () => {
     };
     
     const [center, setCenter] = useState(defaultProps.center)
-
+    const dispatch = useDispatch();
+    
     const MarkerComponent = () => <div className='marker'/>;
 
     const handleSelect = (data) => {
-        // console.log('onSelect', data);
         let ind = MockData.findIndex((x) => x.value === data)
         let newCenter = { lat: MockData[ind].lat, lng: MockData[ind].lng}
 
+        let toStore = {
+            ...MockData[ind],
+        }
+        dispatch(add(toStore))
         setCenter(newCenter)
-        // console.log('ddd', MockData[ind]);
     };
-
-    const handleClear = () => {
-
-    }
 
     return(
         <div style={{ height: '100vh', width: '100%' }}>
@@ -37,19 +38,16 @@ export const Maps = () => {
                 style={{
                     width: 400,
                     border: '1px solid black',
-                    borderRadius:8,
+                    borderRadius:6,
                     position:'absolute',
                     zIndex:1,
                     top: '50px',
                     transform: 'translate(-50%, -50%)'
-                    // margin-right: auto;
                 }}
                 options={MockData}
                 placeholder="Type in the location name"
                 onSelect={handleSelect}
-                onClear={handleClear}
                 filterOption={(inputValue, option) =>  
-                // console.log('oiii', inputValue, option.name);
                     option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                 
                 }  

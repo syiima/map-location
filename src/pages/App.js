@@ -3,7 +3,6 @@ import { Col, Row } from 'antd';
 import { History } from './History';
 import { Maps } from './Maps';
 
-import logo from '../assets/images/logo.svg';
 import '../assets/css/App.css';
 
 
