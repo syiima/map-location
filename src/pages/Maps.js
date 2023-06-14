@@ -8,6 +8,7 @@ import '../assets/css/index.css';
 import location from  '../assets/images/location.png'
 import { MockData } from '../MockData';
 
+const MAP_KEY = ""
 export const Maps = () => {
     const defaultProps = {
         center: {
@@ -55,7 +56,7 @@ export const Maps = () => {
             />
 
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyBl6-E8tQcbe8c3lXzV_oplVrF-PgFZVoo" }}
+                bootstrapURLKeys={{ key: MAP_KEY }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
                 center={center}
